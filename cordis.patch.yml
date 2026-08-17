@@ -1,0 +1,4 @@
+# dsh-plugin-sorter bundle patch: inserts this plugin into the profile layer.
+- insert:
+    - id: dsh-plugin-sorter
+      name: 'dsh-plugin-sorter'
