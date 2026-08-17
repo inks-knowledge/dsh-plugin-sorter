@@ -1,0 +1,55 @@
+{
+  "name": "dsh-plugin-sorter",
+  "version": "0.1.0",
+  "description": "RimCrow-inspired plugin sorter for DeepSeek Harness: two-column enable/disable board, drag to reorder, draft-apply-restart workflow, groups, notes, and diagnostics.",
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "plugin-manager",
+    "plugin-sorter"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inks-knowledge/dsh-plugin-sorter.git"
+  },
+  "homepage": "https://github.com/inks-knowledge/dsh-plugin-sorter#readme",
+  "bugs": {
+    "url": "https://github.com/inks-knowledge/dsh-plugin-sorter/issues"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "client",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-theme"
+      ]
+    }
+  }
+}
